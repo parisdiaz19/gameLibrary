@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game Finder</title>
+
+</head>
+<body>
+   <div class="container">
+        <div class="banner">
+            <h1 class="center-align white-text">Game Finder</h1>
+        </div>
+        <h5 class="center-align">Uses the RAWG API Database</h5>
+        <div class="divider"></div>
+        <div class="flex">
+            <form action="" class="flex" id="submit">
+                <input type="text" id="search" placeholder="Search for games or keywords">
+                <button class="search-btn" type="submit">            
+                   <i class="material-icons">search</i>
+                </button>
+            </form>
+        </div>
+
+       
+        <div class="center-align" id="result-heading"></div>
+        <div class="center-align" id="games" class="games"></div>
+        <div class='center-align' id="single-game"></div>
+        
+
+    </div> 
+
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
