@@ -3,6 +3,9 @@ const submit = document.getElementById('submit');
 const gamesEl = document.getElementById('games');
 const resultHeading = document.getElementById('result-heading');
 const single_gameEl = document.getElementById('single-game');
+const error = document.querySelector('.error');
+
+search.autocomplete = 'on';
 
 
 
@@ -19,7 +22,6 @@ function searchGame(e) {
     let term = search.value; 
     term = term.replace(/\s+/g, '-').toLowerCase();
     let encodedTerm = encodeURIComponent(term);
-    
 
     //Check for empty
     if(term.trim()) {
@@ -30,31 +32,35 @@ function searchGame(e) {
             resultHeading.innerHTML = `<h2>Search Results for '${term}':</h2>`;
             
 
-            if(encodedTerm === '') {
+            if(encodedTerm === 'null') {
                 resultHeading.innerHTML = `<p>There are no search results. Try again</p>`;
             } else {
                 gamesEl.innerHTML = (`
                     <div class='game'>
+                    <style>
+                        .info {border-radius: 10px;}
+                        .game-img {border-radius: 10px;}
+                    </style>
                     <div class='divider'></div>
-                        <img class='responsive-img' src='${data.background_image}' alt='${data.name}' />
+                        <img class='game-img responsive-img' src='${data.background_image}' alt='${data.name}' />
                         <div class='game-info' data-gameID='${data.id}'>
-                            <div class='blue-grey lighten-5'>
+                            <div class='info purple lighten-5'>
                             <h3>${data.name}</h3>
+                            <a class="waves-effect waves-light btn deep-purple lighten-3" href='${data.website}'>Website</a>
+                            <a class="waves-effect waves-light btn deep-purple lighten-3" href='${data.reddit_url}'>Reddit</a>
                             <h5>Release Date: ${data.released}</h5>
                             <h5>Overall Rating: ${data.rating}</h5>
                             <h5>Playtime: ${data.playtime}</h5>
-                            <h5>Genre: ${data.genres}</h5>
+                            <h5>Genre: ${data.genres[0].name}</h5>
                             <p>${data.description}</p>
                             </div>
-                            <a class="waves-effect waves-light btn" href='${data.website}'>Website</a>
-                            <a class="waves-effect waves-light btn" href='${data.reddit_url}'>Reddit</a>
                         </div>
                 `)
 
             }
         });
     } else  {
-        alert('Please enter a search term');
+        alert('Please enter a game name!');
     }
 }
 
