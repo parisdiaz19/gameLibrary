@@ -48,9 +48,11 @@ function searchGame(e) {
                             <h3>${data.name}</h3>
                             <a class="waves-effect waves-light btn deep-purple lighten-3" href='${data.website}'>Website</a>
                             <a class="waves-effect waves-light btn deep-purple lighten-3" href='${data.reddit_url}'>Reddit</a>
+                            <a class="waves-effect waves-light btn deep-purple lighten-3" href='${checkPurchase}'>Purchase</a>
                             <h5>Release Date: ${data.released}</h5>
                             <h5>Overall Rating: ${data.rating}</h5>
                             <h5>Playtime: ${data.playtime}</h5>
+                            <h5>Achievements: ${data.achievements_count}</h5>
                             <h5>Genre: ${data.genres[0].name}</h5>
                             <p>${data.description}</p>
                             </div>
@@ -62,6 +64,15 @@ function searchGame(e) {
     } else  {
         alert('Please enter a game name!');
     }
+}
+
+//Check for Purchase Rating
+const checkPurchase = () => {
+   if (data.stores[i].url === "") {
+       return "No data";
+   } else {
+       return data.stores[0].url;
+   }
 }
 
 //Fetch Game by ID

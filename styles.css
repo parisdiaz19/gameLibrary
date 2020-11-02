@@ -7,3 +7,9 @@
 h1 {
     padding: 80px;
 }
+
+#result-heading {
+    border: solid   black;
+    border-radius: 10px;
+    margin-top: 10px;
+}

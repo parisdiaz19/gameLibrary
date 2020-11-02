@@ -12,9 +12,15 @@
 <body class="deep-purple lighten-3">
    <div class="container">
         <div class="banner purple lighten-5">
-            <h1 class="center-align pink-text">Game Finder</h1>
+            <h1 id="heading" class="center-align pink-text">Game Finder</h1>
         </div>
-        <h5 class="center-align purple darken-3 white-text">Uses the RAWG API Database</h5>
+        <div class="center-align purple darken-3 white-text">
+            <h5 class="center-align purple darken-3 white-text">Uses the RAWG API Database</h5>
+        <p class="center-align">Type the name of the game below to search for it. The results will appear with more
+            information regarding to the game ie: title, website, reddit, picture, description. Enjoy!
+        </p>
+        </div>
+        
         <span class="error"></span>
         <div class="divider"></div>
         <div class="flex">
@@ -28,7 +34,7 @@
         </div>
 
        
-        <div class="center-align" id="result-heading"></div>
+        <div class="center-align purple darken-3" id="result-heading"></div>
         <div class="center-align" id="games" class="games"></div>
         <div class='center-align' id="single-game"></div>
         
